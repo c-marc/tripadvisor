@@ -1,0 +1,176 @@
+/* -- CONFIG & PROPS-- */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-grey: #efefef;
+  --clr-black: #222227;
+  --clr-red: #f3735f;
+}
+
+/* --GENERAL-- */
+
+body {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--clr-grey);
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+button {
+  outline: none;
+}
+/* --HEADER -- */
+
+header {
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+header > .container {
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+header img {
+  height: 40px;
+}
+
+header nav {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+  gap: 1rem;
+}
+
+header nav > button {
+  background-color: var(--clr-black);
+  color: white;
+  height: 40px;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+/* --BODY-- */
+
+/* apply vert margins */
+main :is(nav, section) {
+  margin: 15px 0;
+}
+
+h1 span {
+  color: var(--clr-red);
+}
+
+nav#nav1 {
+  display: flex;
+  gap: 1rem;
+}
+
+nav#nav1 > div {
+  flex: 1;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+/* gallery */
+
+.imgBlock {
+  margin: 20px 0;
+  width: 100%;
+  display: flex;
+  gap: 5px;
+}
+
+.imgblock img {
+  object-fit: cover;
+}
+
+.imgBlock > img {
+  width: 60%;
+}
+
+.imgBlock > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.imgBlock > div > img {
+  flex: 1;
+}
+
+/* -- section description --*/
+
+section#description {
+  display: flex;
+  gap: 2rem;
+}
+
+section#description > div {
+  flex: 3;
+}
+
+section#description > div.card {
+  flex: 2;
+}
+
+.card {
+  width: 600px; /* temporary ?*/
+  border-radius: 10px;
+  overflow: hidden; /* necessayr for border-radius ? */
+  display: flex;
+  flex-direction: column;
+}
+
+.card div {
+  background-color: var(--clr-red);
+  padding: 10px;
+}
+
+.card div button {
+  background-color: var(--clr-black);
+  color: white;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.card img {
+  object-fit: cover;
+}
