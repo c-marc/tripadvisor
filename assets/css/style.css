@@ -276,3 +276,24 @@ section#description > div.card {
 .not-to-miss img {
   width: 100%;
 }
+
+/* -- FOOTER -- */
+footer {
+  height: 200px;
+  background-color: bisque;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+footer img {
+  border: 1px solid black; /*debug*/
+  height: 40px;
+}
+
+footer p {
+  border: 1px solid black; /*debug*/
+  font-weight: bold;
+  font-size: 1.2rem;
+}
