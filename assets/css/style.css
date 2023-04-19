@@ -21,7 +21,7 @@ body {
 }
 
 .container {
-  width: 1200px;
+  width: 1135px;
   margin: 0 auto;
 }
 
@@ -51,7 +51,9 @@ p {
 }
 
 button {
-  outline: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 nav > a {
@@ -66,14 +68,15 @@ nav > a:hover {
 /* --HEADER -- */
 
 header {
-  height: 50px;
+  height: 60px;
   margin-bottom: 20px;
 }
 
-header > .container {
-  padding: 5px 0;
+header > div {
+  height: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 header img {
@@ -81,10 +84,20 @@ header img {
 }
 
 header nav {
+  height: 100%;
   display: flex;
   /* justify-content: space-between; */
   align-items: center;
-  gap: 2rem;
+  gap: 10px;
+}
+
+header nav :is(a, button) {
+  padding: 7px 10px;
+  border-radius: 20px;
+}
+
+header nav a:hover {
+  background-color: lightgray;
 }
 
 header nav > a i {
@@ -202,4 +215,33 @@ section#description > div.card {
 
 .card img {
   object-fit: cover;
+}
+
+/* -- Section Carousels -- */
+
+.not-to-miss > div {
+  display: flex;
+}
+
+.not-to-miss > div > :first-child {
+  flex: 1;
+}
+
+/* carousel */
+.carrousel {
+  flex: 3;
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+/* just 3 pics */
+.carrousel > div {
+  flex-shrink: 0;
+  width: calc(100% / 3 - 2 * 10px);
+}
+
+.not-to-miss img {
+  width: 100%;
 }
