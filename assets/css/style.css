@@ -70,6 +70,13 @@ nav > a:hover {
 header {
   height: 60px;
   margin-bottom: 20px;
+  position: fixed; /* ADDED FOR FIX */
+  top: 0; /* ADDED FOR FIX */
+  background-color: var(--clr-grey); /* ADDED FOR FIX */
+}
+
+main {
+  margin-top: 80px; /* ADDED FOR FIX */
 }
 
 header > div {
@@ -112,7 +119,7 @@ header nav > button {
   border-radius: 20px;
 }
 
-/* --BODY-- */
+/* -- MAIN -- */
 
 /* apply vert margins */
 main :is(nav, section) {
