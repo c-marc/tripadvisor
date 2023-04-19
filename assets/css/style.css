@@ -9,7 +9,8 @@
 :root {
   --clr-grey: #efefef;
   --clr-black: #222227;
-  --clr-red: #f3735f;
+  --clr-red: #fe5d5d;
+  --clr-yellow: #f1b202;
 }
 
 /* --GENERAL-- */
@@ -17,7 +18,7 @@
 body {
   font-size: 16px;
   font-family: TripSans, sans-serif;
-  background-color: var(--clr-grey);
+  background-color: white;
 }
 
 .container {
@@ -32,47 +33,57 @@ h3 {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 54px;
   margin-bottom: 2rem;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 28px;
   margin-bottom: 1rem;
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 24px;
   margin-bottom: 1rem;
 }
 
-p {
+/* p {
   margin-bottom: 1rem;
-}
+} */
 
 button {
   border: none;
   font-family: inherit;
   font-size: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: black;
 }
 
 nav > a {
-  color: black;
   text-decoration: none;
 }
 
-nav > a:hover {
-  font-weight: bold;
+button:hover {
+  opacity: 0.8;
 }
 
-/* --HEADER -- */
+img:hover {
+  opacity: 0.6;
+}
+
+/* -- HEADER -- */
 
 header {
   height: 60px;
   margin-bottom: 20px;
   position: fixed; /* ADDED FOR FIX */
   top: 0; /* ADDED FOR FIX */
-  background-color: var(--clr-grey); /* ADDED FOR FIX */
+  width: 100%; /* ADDED FOR FIX */
+  z-index: 5; /* ADDED FOR FIX */
+  background-color: white;
 }
 
 main {
@@ -93,7 +104,6 @@ header img {
 header nav {
   height: 100%;
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
   gap: 10px;
 }
@@ -104,7 +114,7 @@ header nav :is(a, button) {
 }
 
 header nav a:hover {
-  background-color: lightgray;
+  background-color: var(--clr-grey);
 }
 
 header nav > a i {
@@ -130,78 +140,93 @@ h1 span {
   color: var(--clr-red);
 }
 
-nav#nav1 {
+main p:first-of-type {
+  font-size: 14px;
+}
+
+.menu {
   display: flex;
   gap: 1rem;
 }
 
-nav#nav1 > div {
+.menu > div {
   flex: 1;
   border: 1px solid black;
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: 15px;
+  padding: 15px;
   display: flex;
   justify-content: space-between;
 }
 
-nav#nav1 > div > span {
+.menu > div:hover {
+  color: white;
+  background-color: black;
+}
+
+menu > div p {
   text-overflow: ellipsis;
 }
 
 /* gallery */
 
-.imgBlock {
-  margin: 20px 0;
+.img-block {
+  /* margin: 20px 0; */
+  height: 430px;
   width: 100%;
   display: flex;
   gap: 5px;
 }
 
-.imgblock img {
-  object-fit: cover;
-}
-
-.imgBlock > img {
-  width: 60%;
-}
-
-.imgBlock > div {
+.img-block > :nth-child(1) {
   flex: 1;
+}
+
+.img-block > :nth-child(2) {
+  width: 480px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.imgBlock > div > img {
-  flex: 1;
+.img-block > :nth-child(2) img {
+  height: calc((100% - 5px) / 2);
+}
+
+.img-block img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* -- nav 2 -- */
 
-nav#nav2 {
+.breadcrumb {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
 }
 
 /* -- section description --*/
 
-section#description {
+#description {
   margin-top: 30px;
   display: flex;
-  gap: 2rem;
+  gap: 150px;
 }
 
-section#description > div {
+#description > :first-child {
   flex: 3;
+  line-height: 1.5rem;
+  text-align: justify;
 }
 
-section#description > div.card {
+#description .card {
   flex: 2;
-}
-
-.card {
-  width: 600px; /* temporary ?*/
   border-radius: 10px;
   overflow: hidden; /* necessayr for border-radius ? */
   display: flex;
@@ -217,7 +242,8 @@ section#description > div.card {
   background-color: var(--clr-black);
   color: white;
   border-radius: 20px;
-  padding: 10px;
+  padding: 10px 15px;
+  margin: 20px 0;
 }
 
 .card img {
@@ -226,12 +252,16 @@ section#description > div.card {
 
 /* -- Section Carousels -- */
 
-.not-to-miss > div {
+#not-to-miss > div {
   display: flex;
 }
 
-.not-to-miss > div > :first-child {
+#not-to-miss > div > :first-child {
   flex: 1;
+}
+
+#not-to-miss > div > :first-child p {
+  margin-bottom: 1rem;
 }
 
 /* carousel */
@@ -264,11 +294,15 @@ section#description > div.card {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid black; /* reveal */
+  /* border: 1px solid black; reveal */
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: white;
+}
+
+.carrousel > div > div > i:hover {
+  background-color: var(--clr-grey);
 }
 
 /* logo inset */
@@ -280,13 +314,13 @@ section#description > div.card {
   background-color: orange;
 }
 
-.not-to-miss img {
+.carrousel img {
   width: 100%;
 }
 
 /* -- FOOTER -- */
 footer {
-  height: 200px;
+  height: 150px;
   background-color: bisque;
   display: flex;
   gap: 20px;
@@ -295,12 +329,10 @@ footer {
 }
 
 footer img {
-  border: 1px solid black; /*debug*/
   height: 40px;
 }
 
 footer p {
-  border: 1px solid black; /*debug*/
   font-size: 1.2rem;
   margin: 0;
 }
