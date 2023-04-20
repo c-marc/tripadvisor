@@ -342,7 +342,7 @@ footer p {
 }
 
 footer :is(span, a) {
-  font-weight: bold; /* strong does not work*/
+  font-weight: 500; /* strong does not work*/
 }
 footer a {
   text-decoration: none;
