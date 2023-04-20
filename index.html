@@ -17,19 +17,30 @@
   <body>
     <header>
       <div class="container">
+        <!-- hamburger -->
+        <a class="visible-SM-only" href="#">
+          <i class="fa-solid fa-bars"></i>
+        </a>
+
         <img src="./assets/img/logo.svg" alt="" />
 
         <nav>
-          <a href="#"><i class="fa-solid fa-pen"></i><span>Avis</span> </a>
-          <a href="#"
-            ><i class="fa-regular fa-bell"></i> <span>Alertes</span>
+          <a class="visible-M" href="#"
+            ><i class="fa-solid fa-pen"></i><span class="visible-LG">Avis</span>
           </a>
-          <a href="#"
-            ><i class="fa-regular fa-heart"></i><span>Favoris</span>
+          <a class="visible-M" href="#"
+            ><i class="fa-regular fa-bell"></i>
+            <span class="visible-LG">Alertes</span>
           </a>
-          <button>Connectez-vous</button>
+          <a class="visible-M" href="#"
+            ><i class="fa-regular fa-heart"></i
+            ><span class="visible-LG">Favoris</span>
+          </a>
+          <button class="visible-M">Connectez-vous</button>
+
           <a href="#"
-            ><i class="fa-regular fa-heart"></i><span>Whatever</span>
+            ><i class="fa-solid fa-cart-shopping"></i>
+            <span class="visible-LG">Panier</span>
           </a>
         </nav>
       </div>

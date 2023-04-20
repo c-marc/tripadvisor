@@ -22,7 +22,7 @@ body {
 }
 
 .container {
-  width: 1135px;
+  max-width: min(1135px, 100% - 40px);
   margin: 0 auto;
 }
 
@@ -152,6 +152,7 @@ main p:first-of-type {
   padding: 15px;
   display: flex;
   justify-content: space-between;
+  gap: 5px;
 }
 
 .menu > div:hover {
@@ -216,7 +217,8 @@ menu > div p {
 #description {
   margin-top: 30px;
   display: flex;
-  gap: 150px;
+  justify-content: space-between;
+  gap: 50px;
 }
 
 #description > :first-child {
@@ -350,4 +352,74 @@ footer a {
 
 footer i {
   color: var(--clr-red);
+}
+
+/* -- MQ -- */
+.visible-LG {
+  display: inline;
+}
+
+.visible-M {
+  display: inline;
+}
+
+.visible-SM-only {
+  display: none;
+}
+
+@media (max-width: 1184px) {
+  .menu {
+    gap: 5px;
+    flex-wrap: wrap;
+  }
+  .menu > div {
+    flex: none;
+    width: calc((100% - 15px) / 4);
+  }
+}
+
+@media (max-width: 1024px) {
+  .visible-LG {
+    display: none;
+  }
+
+  .img-block {
+    /* margin: 20px 0; */
+    height: 275px;
+  }
+
+  .img-block > :nth-child(2) {
+    width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .visible-M {
+    display: none;
+  }
+
+  .visible-SM-only {
+    display: block;
+  }
+
+  .menu {
+    flex-wrap: nowrap;
+    justify-items: start;
+    overflow: hidden;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+
+  .menu > div {
+    width: fit-content;
+    flex: 1;
+  }
+
+  #description {
+    flex-direction: column;
+  }
+
+  .card {
+    margin: 0 20px;
+  }
 }
